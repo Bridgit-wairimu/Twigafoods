@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{blocksuper}}
+
+<style>
+    
+  img{
+    margin-top: 50px;
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:  6px;
+    float: left;
+    width: 20.9999%;
+    margin: 6px ;
+    cursor: pointer;
+} 
+</style>
+
+<div class="prod">
+    <h1>Featured Products</h1>
+    <hr>
+
+     <body id="bodyimage">
+        <div class="card-columns">
+    {% for image in images %}
+    <div class="poraloid" data-toggle="modal" data-target="#{{image.id}}" >
+        <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img" class="img-responsive" width="200px" height="150px">
+    </div>
+    {%endfor%}
+</div>
+</body>
+{%endblock%}
